@@ -1,3 +1,4 @@
+// Actual version on https://github.com/atrdenis/LCDMeteo
 // Interfacing Arduino with DHT22 humidity/temperature sensor and BMP280 pressure/temperature sensor.
 // The results are displayed on the LCD screen 1602 with I2C.
 // Сhange in pressure predicts change in weather
