@@ -1,4 +1,3 @@
-// Actual version on https://github.com/atrdenis/LCDMeteo
 // Interfacing Arduino with DHT22 humidity/temperature sensor and BMP280 pressure/temperature sensor.
 // The results are displayed on the LCD screen 1602 with I2C.
 // Сhange in pressure predicts change in weather
@@ -180,7 +179,8 @@ if (calculate_flag) {
     if ((dispRain>=20) && (dispRain<40)) {lcd.setCursor(0, 0);  lcd.print((char) 0x04); lcd.print("   "); lcd.print(dispRain);  lcd.print(" %");}
     if ((dispRain>=40) && (dispRain<70)) {lcd.setCursor(0, 0);  lcd.print((char) 0x04); lcd.print((char) 0x04); lcd.print("  "); lcd.print(dispRain);  lcd.print(" %");}
     if ((dispRain>=70)) {lcd.setCursor(0, 0);  lcd.print((char) 0x04);lcd.print((char) 0x04); lcd.print((char) 0x04); lcd.print(" "); lcd.print(dispRain);  lcd.print(" %");}
-    if ((dispRain>-20) && (dispRain<20)) {lcd.setCursor(0, 0);  lcd.print((char) 0x04); lcd.print((char) 0x05); lcd.print("  "); lcd.print(abs(dispRain));  lcd.print(" %");}
+    if ((dispRain>-20) && (dispRain<=0)) {lcd.setCursor(0, 0);  lcd.print((char) 0x05); lcd.print((char) 0x04); lcd.print("  "); lcd.print(abs(dispRain));  lcd.print(" %");}
+    if ((dispRain>0) && (dispRain<20)) {lcd.setCursor(0, 0);  lcd.print((char) 0x04); lcd.print((char) 0x05); lcd.print("  "); lcd.print(abs(dispRain));  lcd.print(" %");}
     if ((dispRain<=-20) && (dispRain>-40)) {lcd.setCursor(0, 0);  lcd.print((char) 0x05); lcd.print("   "); lcd.print(-dispRain);  lcd.print(" %");}
     if ((dispRain<=-40) && (dispRain>-70)) {lcd.setCursor(0, 0);  lcd.print((char) 0x05); lcd.print((char) 0x05); lcd.print("  "); lcd.print(-dispRain);  lcd.print(" %");}
     if ((dispRain<=-70)) {lcd.setCursor(0, 0);  lcd.print((char) 0x05);lcd.print((char) 0x05); lcd.print((char) 0x05); lcd.print(" "); lcd.print(-dispRain);  lcd.print(" %");}
